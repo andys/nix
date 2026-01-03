@@ -74,7 +74,7 @@ func ErrorToZeroLog(err error) *zerolog.Event {
 		}
 		result.Dict("error_context", errlogctxs)
 	} else {
-		result.Interface("error", err)
+		result.Err(err)
 	}
 
 	return result
